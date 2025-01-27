@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, pink, purple);
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #333;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        .section {
+            padding: 20px;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#" data-section="home">Home</a>
+    <a href="#" data-section="about">About Myself</a>
+    <a href="#" data-section="life">My Life Story</a>
+    <a href="#" data-section="hobbies">Hobbies</a>
+    <a href="#" data-section="favorites">Favorite</a>
+    <a href="#" data-section="friends">Friends</a>
+</div>
+
+<div id="home" class="section active">
+    <h1>About Myself</h1>
+    
+    <figure>
+        <center><img src="pfp.jpg" alt="pfp" width="500" height=350 > </center>
+       <figcaption style="font-weight: bold;"> Joel A Caluya III</figcaption>
+        <p><b>Hi, I’m Joel A. Caluya III, a college student currently pursuing a degree in Information Technology. I’m passionate about technology, problem-solving, and continuously learning new skills to keep up with the fast-paced IT industry. I’m excited about exploring areas like programming, cybersecurity, and software development as I build my career in tech</b></p>
+    </figure>
+</div>
+<div id="about" class="section">
+    <h1>About Myself</h1>
+  <p>Name: <b>  Joel A. Caluya III</b></p>
+  <p>Age: <b>19 Years-old</b></p>
+  <p>Address: <b>D-7, Brgy. Sacol, Buenavista, Agusan del Norte</b></p> 
+  <p>Birth Date: <b>April 9, 2005</b></p>
+  <p>Gender: <b>Male</b></p>
+  <p>Status: <b>Single</b></p>
+  <p>Course: <b>Bachelor of Science Information Technology</b></p>
+  <p> Motto: <b> Let all that you do be done in love.</b></p>
+  <center> <img src="abt.jpg" alt="" width="400" height= ></center>
+
+
+</div>
+<div id="life" class="section">
+    <h1>My Life Story</h1>
+    <h5>Childhood Year</h5>
+    <p>During my childhood year, it was amazing because I explore many things that I am very curios, also this childhood days I'm so addicted to computer and push me to become an IT.</p> 
+    
+    <h5>Teenage Year</h5>
+    <p>During my Teenage Year I became active in the church and a member of Parish Youth Apostolate in my Parish year 2019, and became Altar Server year 2021.   .</p> 
+
+    <h5>Adult Year</h5>
+    <p>During Adulthood I realized many things about life.</p> 
+</div>
+<div id="hobbies" class="section">
+    <h1>My Hobbies</h1>
+<ul>Dancing</ul>
+<ul>Listening Music</ul>
+<ul>Playing Games.</ul>
+<ul>Watching Animes </ul>
+
+</div>
+<div id="favorites" class="section">
+    <h1>My Favorites</h1>
+  <h5>Favorite Food</h5>
+  <ul>Fried Rice</ul>
+  <ul>Barbecue</ul>
+  <ul>Roasted  Chicken </ul>
+  <ul>Adobo</ul>
+  <ul>Kinilaw</ul>
+
+</div>
+<div id="friends" class="section">
+    <h1>My Friends</h1>
+    <figure>
+   <img src="1.jpg" alt="" height="400" width="250">
+   <p style="font-weight: bold;"> PYAT 7 </p>
+
+   <CEnter><img src="4.jpg" alt="" height="400" width="325"></CEnter>
+   <center><p>Highschool Friend</p></center>
+</div>
+
+<script>
+    const navLinks = document.querySelectorAll('.navbar a');
+    const sections = document.querySelectorAll('.section');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Remove active class from all sections
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Add active class to the clicked section
+            const sectionId = link.getAttribute('data-section');
+            document.getElementById(sectionId).classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
